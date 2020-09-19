@@ -3,38 +3,40 @@ import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default () => (
-  <nav role="navigation"  class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-    <div class="flex items-center flex-shrink-0 text-white mr-6">
-      <img src={'/citylights-logo.png'} alt="City Lights Logo" />
+  <nav role="navigation"  class="flex content-start justify-between flex-wrap">
+    <div class="flex-initial w-1/3 px-2">
+      <Link to="/">
+        <img class="w-56"  src={'/citylights-logo.png'} alt="City Lights Logo" />
+      </Link>
     </div>
-    <div class="block lg:hidden">
-      <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+    <div class="flex-initial w-2/3 text-right lg:hidden">
+      <button class="flex items-center px-3 py-2 border rounded text-black border-black">
         <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
       </button>
     </div>
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-      <ul class="text-sm">
-          <li class="block mt-4 lg:inline-block lg:mt-0 text-black mr-4">
-            <Link to="/">Home</Link>
-          </li>
-          <li class="block mt-4 lg:inline-block lg:mt-0 text-black mr-4">
-            <Link to="/media/">Media</Link>
-          </li>
-          <li class="block mt-4 lg:inline-block lg:mt-0 text-black">
-            <Link to="/contact/">Contact</Link>
-          </li>
+    <div class="flex-initial w-1/3 px-2 text-center">
+      <ul class="mt-4 text-black text-base">
+        <li class="lg:inline-block lg:mt-0 mr-4">
+          <Link to="/">Home</Link>
+        </li>
+        <li class="lg:inline-block lg:mt-0 mr-4">
+          <Link to="/media/">Media</Link>
+        </li>
+        <li class="lg:inline-block lg:mt-0">
+          <Link to="/contact/">Contact</Link>
+        </li>
       </ul>
-      <div>
-        <Link to="#">
-          <FontAwesomeIcon icon={['fab', 'facebook']} />
-        </Link>
-        <Link to="#">
-          <FontAwesomeIcon icon={['fab', 'instagram']} />
-        </Link>
-        <Link to="#">
-            <FontAwesomeIcon icon={['fab', 'youtube']} />
-        </Link>
-      </div>
+    </div>
+    <div class="flex-initial w-1/3 text-right p-4">
+      <Link class="text-2xl px-2" to="#">
+          <FontAwesomeIcon icon={['fab', 'youtube']} />
+      </Link>
+      <Link class="text-2xl px-2" to="#">
+        <FontAwesomeIcon icon={['fab', 'instagram']} />
+      </Link>
+      <Link class="text-2xl px-2" to="#">
+        <FontAwesomeIcon icon={['fab', 'facebook']} />
+      </Link>
     </div>
   </nav>
 )

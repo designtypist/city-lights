@@ -1,86 +1,74 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import get from 'lodash/get'
-import { Helmet } from 'react-helmet'
-import Hero from '../components/hero'
 import Layout from '../components/layout'
-import ArticlePreview from '../components/article-preview'
 
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allContentfulBlogPost.edges')
-    const [author] = get(this, 'props.data.allContentfulPerson.edges')
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
-          <Helmet title={siteTitle} />
-          <Hero data={author.node} />
-          <div className="wrapper">
-            <h2 className="section-headline">Recent articles</h2>
-            <ul className="article-list">
-              {posts.map(({ node }) => {
-                return (
-                  <li key={node.slug}>
-                    <ArticlePreview article={node} />
+        <main>
+          <div class="splash blob">
+            <h1>Hip-Hop Community Matters to God</h1>
+            <div class="carousel">
+              <div class="carousel-inner">
+                <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked" />
+                <div class="carousel-item">
+                  <img src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Without" />
+                </div>
+                <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="" />
+                <div class="carousel-item">
+                  <img src="http://fakeimg.pl/2000x800/DA5930/fff/?text=JavaScript" />
+                </div>
+                <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="" />
+                <div class="carousel-item">
+                  <img src="http://fakeimg.pl/2000x800/F90/fff/?text=Carousel" />
+                </div>
+                <label for="carousel-3" class="carousel-control prev control-1">‹</label>
+                <label for="carousel-2" class="carousel-control next control-1">›</label>
+                <label for="carousel-1" class="carousel-control prev control-2">‹</label>
+                <label for="carousel-3" class="carousel-control next control-2">›</label>
+                <label for="carousel-2" class="carousel-control prev control-3">‹</label>
+                <label for="carousel-1" class="carousel-control next control-3">›</label>
+                <ol class="carousel-indicators">
+                  <li>
+                      <label for="carousel-1" class="carousel-bullet">•</label>
                   </li>
-                )
-              })}
-            </ul>
+                  <li>
+                      <label for="carousel-2" class="carousel-bullet">•</label>
+                  </li>
+                  <li>
+                      <label for="carousel-3" class="carousel-bullet">•</label>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <h3>That's why he sent  Jesus Christ  and that's why he sends us</h3>
           </div>
-        </div>
+          <div class="story">
+            <h3>Our Story</h3>
+            <img />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, odio elit sed turpis 
+              leo, felis nibh lacinia viverra. Odio integer cursus duis faucibus. Et tortor lectus 
+              mauris amet nisi in ut dignissim in. Mauris senectus ac mauris feugiat commodo 
+              id viverra ut adipiscing. Sit sociis pretium pretium erat. Arcu nunc ornare a amet 
+              vestibulum, pellentesque mi. Lacus, eget vitae velit eu augue amet. Ullamcorper 
+              ultrices eu eu facilisi ac amet ac nisl. Dui aliquam eleifend nulla leo lobortis.
+            </p>
+          </div>
+          <div class="come-join-us">
+            <section>...</section>
+          </div>
+          <div class="quote">
+            <p>“Hit us up for more information ony any of these. Looking forward to connecting with you.”</p>
+            <Link to="/connect/">Connect</Link>
+          </div>
+        </main>
       </Layout>
     )
   }
 }
 
 export default RootIndex
-
-export const pageQuery = graphql`
-  query HomeQuery {
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
-      edges {
-        node {
-          title
-          slug
-          publishDate(formatString: "MMMM Do, YYYY")
-          tags
-          heroImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
-          }
-          description {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
-      }
-    }
-    allContentfulPerson(
-      filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }
-    ) {
-      edges {
-        node {
-          name
-          shortBio {
-            shortBio
-          }
-          title
-          heroImage: image {
-            fluid(
-              maxWidth: 1180
-              maxHeight: 480
-              resizingBehavior: PAD
-              background: "rgb:000000"
-            ) {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
-          }
-        }
-      }
-    }
-  }
-`
