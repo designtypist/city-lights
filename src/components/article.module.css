@@ -1,0 +1,31 @@
+article {
+    margin: 2em 0;
+}
+
+.articleHero {
+    position: relative;
+    width: 50%;
+}
+
+.articleTitleBackground {
+    position: absolute;
+    background-color: rgba(0,0,0,0.3);
+    width: 100%;
+}
+
+.articleTitle {
+    opacity: 100%;
+    padding: 0.5em 1em;
+    color: white;
+}
+
+.articleDescBackground {
+    position: relative;
+    width: 50%;
+    background-color: #C4C4C4;
+}
+
+.articleDesc {
+    color: black;
+    padding: 1em 2em;
+}
