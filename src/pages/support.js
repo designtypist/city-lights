@@ -11,7 +11,7 @@ class RootIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const [pageHeader] = get(this, 'props.data.allContentfulPageHeader.edges')
     const partners = get(this, 'props.data.allContentfulPartner.edges')
-    const suppoprtOpportunities = get(this, 'props.data.allContentfulOpportunity.edges')
+    const citylightsOpportunities = get(this, 'props.data.allContentfulOpportunity.edges')
 
     return (
       <Layout location={this.props.location}>
@@ -42,16 +42,12 @@ class RootIndex extends React.Component {
                 </ul>
                 <hr />
               </div>
-              <div class="support-us my-24">
+              <div class="support-us my-12">
                 <h2 class="section-headline text-right">Want to Support Us?</h2>
-                {suppoprtOpportunities.map(({ node }) => {
+                {citylightsOpportunities.map(({ node }) => {
                   return (
-                    <section class="my-24" key={node.id}>
-                      <Article
-                        title={node.title}
-                        description={node.description.description}
-                        image={node.image.file.url}
-                      />
+                    <section key={node.id}>
+                      <Article data={node} />
                     </section>
                   )
                 })}

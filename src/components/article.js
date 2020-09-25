@@ -4,16 +4,16 @@ import Img from 'gatsby-image'
 
 import styles from './article.module.css'
 
-export default ({ title, image, description, position }) => (
+export default ({ data, position }) => (
   <article>
     <div className={styles.articleHero}>
       <div className={styles.articleTitleBackground}>
-        <h3 className={styles.articleTitle}>{title}</h3>
+        <h3 className={styles.articleTitle}>{data.title}</h3>
       </div>
-      <img src={image} alt="" />
+      <img src={data.image.file.url} alt="" />
     </div>
     <div className={styles.articleDescBackground}>
-      <p className={styles.articleDesc}>{description}</p>
+      <p className={styles.articleDesc}>{data.description.description}</p>
     </div>
   </article>
 )

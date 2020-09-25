@@ -8,7 +8,7 @@ import Article from '../components/article'
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const activities = get(this, 'props.data.allContentfulActivity.edges')
+    const citylightsActivities = get(this, 'props.data.allContentfulActivity.edges')
 
     return (
       <Layout location={this.props.location}>
@@ -57,10 +57,10 @@ class RootIndex extends React.Component {
             <div class="story pt-6">
               <h3 class="section-headline">Our Story</h3>
               <div>
-                <div class="float-left inline-block box-border h-20 w-48 p-4 border-4 border-gray-400 bg-gray-200 mr-4 mb-4">
-                  <div class="h-full w-full bg-gray-400"></div>
+                <div class="float-left inline-block mr-8 mb-8">
+                  <img src="./citylights-image.jpg" alt="City Lights Caption Image" />
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis et lorem sit amet vehicula. Etiam vel nibh nec 
+                <p class="text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis et lorem sit amet vehicula. Etiam vel nibh nec 
                   nisi euismod mollis ultrices condimentum velit. Proin velit libero, interdum ac rhoncus sit amet, pellentesque ac turpis. 
                   Quisque ac luctus turpis, vel efficitur ante. Cras convallis risus vel vehicula dapibus. Donec eget neque fringilla, faucibus 
                   mi quis, porttitor magna. Cras pellentesque leo est, et luctus neque rutrum eu. Aliquam consequat velit sed sem posuere, 
@@ -68,19 +68,21 @@ class RootIndex extends React.Component {
                   Ut congue vehicula lectus in blandit. Vivamus suscipit eleifend turpis, nec sodales sem vulputate a. Curabitur pulvinar 
                   libero viverra, efficitur odio eu, finibus justo. Etiam eu vehicula felis.
                 </p>
+                <div class="mt-8 mb-24">
+                  <img src="./sonz-graffiti.png" alt="Sonz Graffiti Photo"/>
+                </div>
               </div>
             </div>
-            {activities.map(({ node }) => {
-              return (
-                <section key={node.id}>
-                  <Article 
-                    title={node.title}
-                    description={node.description.description}
-                    image={node.image.file.url}
-                  />
-                </section>
-              )
-            })}
+            <div class="activities my-12">
+              <h2 class="section-headline">City Lights Activities</h2>
+              {citylightsActivities.map(({ node }) => {
+                return (
+                  <section key={node.id}>
+                    <Article data={node} />
+                  </section>
+                )
+              })}
+            </div>
             <div class="bg-auto bg-gray-300 text-center p-12 my-24">
               <h3 class="italic mb-6">“Hit us up for more information ony any of these. Looking forward to connecting with you.”</h3>
               <Link class="bg-black text-white font-bold py-2 px-4 rounded" to="/connect/">Connect</Link>
