@@ -1,6 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import get from 'lodash/get'
+import { graphql } from 'gatsby'
+import { Link } from 'gatsby'
+import { Helmet } from 'react-helmet'
 import Container from '../components/container'
 import Layout from '../components/layout'
 import Article from '../components/article'
@@ -12,6 +14,7 @@ class RootIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
+        <Helmet title={siteTitle} />
         <main>
           <div class="splash">
             <h1 class="uppercase text-right text-white">Hip-Hop Community Matters to God</h1>
@@ -19,34 +22,34 @@ class RootIndex extends React.Component {
               <div class="carousel-inner">
                 <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="true" checked="checked" />
                 <div class="carousel-item">
-                  <img src="http://fakeimg.pl/600x400/0079D8/fff/?text=Without" />
-                  <img src="http://fakeimg.pl/600x400/DA5930/fff/?text=JavaScript" />
+                  <img src="http://fakeimg.pl/600x400/0079D8/fff/?text=Without" alt="" />
+                  <img src="http://fakeimg.pl/600x400/DA5930/fff/?text=JavaScript" alt="" />
                 </div>
                 <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="true" />
                 <div class="carousel-item">
-                  <img src="http://fakeimg.pl/600x400/0079D8/fff/?text=Without" />
-                  <img src="http://fakeimg.pl/600x400/F90/fff/?text=Carousel" />
+                  <img src="http://fakeimg.pl/600x400/0079D8/fff/?text=Without" alt="" />
+                  <img src="http://fakeimg.pl/600x400/F90/fff/?text=Carousel" alt="" />
                 </div>
                 <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="true" />
                 <div class="carousel-item">
-                  <img src="http://fakeimg.pl/600x400/F90/fff/?text=Carousel" />
-                  <img src="http://fakeimg.pl/600x400/DA5930/fff/?text=JavaScript" />
+                  <img src="http://fakeimg.pl/600x400/F90/fff/?text=Carousel" alt="" />
+                  <img src="http://fakeimg.pl/600x400/DA5930/fff/?text=JavaScript" alt="" />
                 </div>
-                <label for="carousel-3" class="carousel-control prev control-1">‹</label>
-                <label for="carousel-2" class="carousel-control next control-1">›</label>
-                <label for="carousel-1" class="carousel-control prev control-2">‹</label>
-                <label for="carousel-3" class="carousel-control next control-2">›</label>
-                <label for="carousel-2" class="carousel-control prev control-3">‹</label>
-                <label for="carousel-1" class="carousel-control next control-3">›</label>
+                <label htmlFor="carousel-3" for="carousel-3" class="carousel-control prev control-1">‹</label>
+                <label htmlFor="carousel-2" for="carousel-2" class="carousel-control next control-1">›</label>
+                <label htmlFor="carousel-1" for="carousel-1" class="carousel-control prev control-2">‹</label>
+                <label htmlFor="carousel-3" for="carousel-3" class="carousel-control next control-2">›</label>
+                <label htmlFor="carousel-2" for="carousel-2" class="carousel-control prev control-3">‹</label>
+                <label htmlFor="carousel-1" for="carousel-1" class="carousel-control next control-3">›</label>
                 <ol class="carousel-indicators hidden">
                   <li>
-                      <label for="carousel-1" class="carousel-bullet">•</label>
+                      <label htmlFor="carousel-1" for="carousel-1" class="carousel-bullet">•</label>
                   </li>
                   <li>
-                      <label for="carousel-2" class="carousel-bullet">•</label>
+                      <label htmlFor="carousel-2" for="carousel-2" class="carousel-bullet">•</label>
                   </li>
                   <li>
-                      <label for="carousel-3" class="carousel-bullet">•</label>
+                      <label htmlFor="carousel-3" for="carousel-3" class="carousel-bullet">•</label>
                   </li>
                 </ol>
               </div>
@@ -58,7 +61,7 @@ class RootIndex extends React.Component {
               <h3 class="section-headline">Our Story</h3>
               <div>
                 <div class="float-left inline-block mr-8 mb-8">
-                  <img src="./citylights-image.jpg" alt="City Lights Caption Image" />
+                  <img src="./citylights-image.jpg" alt="City Lights Caption" />
                 </div>
                 <p class="text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis et lorem sit amet vehicula. Etiam vel nibh nec 
                   nisi euismod mollis ultrices condimentum velit. Proin velit libero, interdum ac rhoncus sit amet, pellentesque ac turpis. 
@@ -69,7 +72,7 @@ class RootIndex extends React.Component {
                   libero viverra, efficitur odio eu, finibus justo. Etiam eu vehicula felis.
                 </p>
                 <div class="mt-8 mb-24">
-                  <img src="./sonz-graffiti.png" alt="Sonz Graffiti Photo"/>
+                  <img src="./sonz-graffiti.png" alt="Sonz Graffiti"/>
                 </div>
               </div>
             </div>

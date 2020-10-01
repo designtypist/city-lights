@@ -32,7 +32,7 @@ class RootIndex extends React.Component {
                 <ul class="flex my-6">
                   {partners.map(({ node }) => {
                     return (
-                        <li class="w-1/4" target="_blank">
+                        <li key={node.id} class="w-1/4" target="_blank">
                           <a href={node.link} >
                             <img src={node.image.file.url} alt={node.name} />
                           </a>
