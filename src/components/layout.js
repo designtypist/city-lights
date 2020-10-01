@@ -12,6 +12,12 @@ class Template extends React.Component {
     return (
       <div>
         <Header />
+          <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                `,
+              }}
+          />
           {children}
         <Footer />
       </div>
