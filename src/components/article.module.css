@@ -1,10 +1,24 @@
-article {
-    margin: 2em 0;
+div.divOuter {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    z-index: 0;
 }
 
-.articleHero {
-    position: relative;
-    width: 50%;
+div.div1 {
+    position: absolute;
+    z-index: 2;
+    max-width: 50%;
+    top: 40px;
+    left: 40px;
+}
+
+div.div2 {
+    position: absolute;
+    max-width: 50%;
+    z-index: 1;
+    top: 80px;
+    right: 80px;
 }
 
 .articleTitleBackground {
@@ -19,13 +33,19 @@ article {
     color: white;
 }
 
+.articleImage {
+    height: 400px;
+    width: 650px;
+}
+
 .articleDescBackground {
-    position: relative;
-    width: 50%;
-    background-color: #C4C4C4;
+    background-color: #e4e4e4;
+    height: 400px;
+    width: 650px;
+    
 }
 
 .articleDesc {
     color: black;
-    padding: 1em 2em;
+    padding: 1em 2em 1em 10em;
 }

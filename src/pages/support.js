@@ -44,13 +44,15 @@ class RootIndex extends React.Component {
               </div>
               <div class="support-us my-12">
                 <h2 class="section-headline text-right">Want to Support Us?</h2>
+                <section>
                 {citylightsOpportunities.map(({ node }) => {
                   return (
-                    <section key={node.id}>
+                    <article class="block" key={node.id}>
                       <Article data={node} />
-                    </section>
+                    </article>
                   )
                 })}
+                </section>
               </div>
             </main>
           </Container>

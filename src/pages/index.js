@@ -78,13 +78,15 @@ class RootIndex extends React.Component {
             </div>
             <div class="activities my-12">
               <h2 class="section-headline">City Lights Activities</h2>
-              {citylightsActivities.map(({ node }) => {
-                return (
-                  <section key={node.id}>
-                    <Article data={node} />
-                  </section>
-                )
-              })}
+              <section>
+                {citylightsActivities.map(({ node }) => {
+                  return (
+                    <article key={node.id}>
+                      <Article data={node} />
+                    </article>
+                  )
+                })}
+              </section>
             </div>
             <div class="bg-auto bg-gray-300 text-center p-12 my-24">
               <h3 class="italic mb-6">“Hit us up for more information ony any of these. Looking forward to connecting with you.”</h3>
