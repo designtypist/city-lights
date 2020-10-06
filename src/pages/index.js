@@ -17,7 +17,7 @@ class RootIndex extends React.Component {
         <Helmet title={siteTitle} />
         <main>
           <div class="splash">
-            <h1 class="uppercase text-right text-white">Hip-Hop Community Matters to God</h1>
+            <h1 class="uppercase text-right text-white">The Hip-Hop Community &amp; God</h1>
             <div class="carousel">
               <div class="carousel-inner">
                 <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="true" checked="checked" />
@@ -54,22 +54,32 @@ class RootIndex extends React.Component {
                 </ol>
               </div>
             </div>
-            <h3 class="text-center text-white">That's why he sent Jesus Christ and that's why he sends us</h3>
+            <h3 class="text-center text-white">Hip-Hop Culture × Love × Jesus</h3>
           </div>
           <Container>
             <div class="story pt-6">
-              <h3 class="section-headline">Our Story</h3>
+              <h3 class="section-headline">Who We Be</h3>
               <div>
                 <div class="float-left inline-block mr-8 mb-8">
                   <img src="./citylights-image.jpg" alt="City Lights Caption" />
                 </div>
-                <p class="text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis et lorem sit amet vehicula. Etiam vel nibh nec 
-                  nisi euismod mollis ultrices condimentum velit. Proin velit libero, interdum ac rhoncus sit amet, pellentesque ac turpis. 
-                  Quisque ac luctus turpis, vel efficitur ante. Cras convallis risus vel vehicula dapibus. Donec eget neque fringilla, faucibus 
-                  mi quis, porttitor magna. Cras pellentesque leo est, et luctus neque rutrum eu. Aliquam consequat velit sed sem posuere, 
-                  vitae sollicitudin mi consequat. Mauris eget ipsum sed dui rutrum fringilla. Donec varius vehicula magna sit amet auctor. 
-                  Ut congue vehicula lectus in blandit. Vivamus suscipit eleifend turpis, nec sodales sem vulputate a. Curabitur pulvinar 
-                  libero viverra, efficitur odio eu, finibus justo. Etiam eu vehicula felis.
+                <p class="text-xl">
+                  God loved the world – including the hip-hop community – so much that he sent his Son, Jesus, not to
+                  condemn us, but to save us. Jesus showed us the love &amp; truth of God, died for our sins &amp; resurrected,
+                  and Jesus left us with a mission: Going and making disciples (“apprentices”), baptising them and
+                  teaching them to follow all that he taught. 
+                  One people group that is often left out is the hip-hop community: emcees, deejays, breakers, graffiti
+                  writers, those involved with knowledge, fans, etc. God has called us to reach them, in their
+                  world/culture, and to make disciples that make more disciples.
+                  The vision is to see Canada’s hip-hop community following Jesus Christ. We will do this by providing
+                  events to better their skills, events to serve others, building genuine loving relationships, and discipling
+                  them in a way that is natural to the hip-hop culture.
+                  Can you imagine how dope it will be if, because they follow Jesus so well, that instead of having a
+                  reputation for misogyny, drugs, and violence, they became known for their grace, generosity, kindness,
+                  peace, joy, and helping others have a relationship with God?
+                  There is no blueprint for this pioneering mission (in Canada), we will be faithful to the work as God
+                  makes the work fruitful. We will love the people, encourage the hip-hop elements, bring &amp; show the
+                  truth of Christ, and let God lead – all while being ourselves.
                 </p>
                 <div class="mt-8 mb-24">
                   <img src="./sonz-graffiti.png" alt="Sonz Graffiti"/>
@@ -79,10 +89,14 @@ class RootIndex extends React.Component {
             <div class="activities my-12">
               <h2 class="section-headline">City Lights Activities</h2>
               <section>
-                {citylightsActivities.map(({ node }) => {
+                {citylightsActivities.map(({ node }, index) => {
                   return (
                     <article key={node.id}>
-                      <Article data={node} />
+                      {index % 2 === 0 ? 
+                        <Article data={node} position='left' />
+                        :
+                        <Article data={node} position='right' />
+                      }
                     </article>
                   )
                 })}

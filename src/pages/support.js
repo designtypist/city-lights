@@ -1,5 +1,6 @@
 import React from 'react'
 import get from 'lodash/get'
+import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Container from '../components/container'
 import Layout from '../components/layout'
@@ -42,16 +43,20 @@ class RootIndex extends React.Component {
                 </ul>
                 <hr />
               </div>
-              <div class="support-us my-12">
-                <h2 class="section-headline text-right">Want to Support Us?</h2>
+              <div class="my-12">
+                <h2 class="section-headline lg:text-right sm:text-center">Want to Support Us?</h2>
                 <section>
-                {citylightsOpportunities.map(({ node }) => {
-                  return (
-                    <article class="block" key={node.id}>
-                      <Article data={node} />
-                    </article>
-                  )
-                })}
+                  {citylightsOpportunities.map(({ node }, index) => {
+                    return (
+                      <article key={node.id}>
+                        {index % 2 === 0 ? 
+                          <Article data={node} position='left' />
+                          :
+                          <Article data={node} position='right' />
+                        }
+                      </article>
+                    )
+                  })}
                 </section>
               </div>
             </main>
