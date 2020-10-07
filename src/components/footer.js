@@ -33,7 +33,7 @@ export default () => (
       <div class="flex bg-black text-white">
         <div class="flex w-1/2 items-center p-4 pl-24">
             <Link to="/" class="flex-initial ">
-                <img class="w-40 mr-6" src={'/citylights-logo-invert.png'} alt="City Lights Logo" />
+                <img class="w-40 mr-6" src={'../citylights-logo-invert.png'} alt="City Lights Logo" />
             </Link>
             <div class="flex-initial px-2">
                 <p>© 2013-2020 CityLights. All right reserved </p>

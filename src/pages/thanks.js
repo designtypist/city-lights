@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import Hero from '../components/hero'
-import ContactForm from '../components/contactform'
 
 class RootIndex extends React.Component {
 
@@ -18,10 +17,11 @@ class RootIndex extends React.Component {
         <Helmet title={siteTitle} />
         <Hero data={pageHeader.node} />
         <Container>
-          <h3 class="uppercase font-bold">Want to get in touch with us?</h3>
-          <p class="italic">Send us an email using citylights@thewordbecamefresh.ca or you can use the form below which ever floats your boat :D</p>
-          <ContactForm />
-          
+          <div class="my-16">
+            <h2>Thank you!</h2>
+            <p class="pb-4">We will get back to you as soon as possible! :D</p>
+            <a href="/" class="bg-black text-white font-bold py-2 px-4 rounded">Go Back to Homepage</a>
+          </div> 
         </Container>
       </Layout>
     )
@@ -34,7 +34,7 @@ export const query = graphql`{
   allContentfulPageHeader(
       filter: {
         name: {
-          regex: "/Contact/"
+          regex: "/Thanks/"
         }
       }
     ) {

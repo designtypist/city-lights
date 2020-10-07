@@ -6,7 +6,7 @@ export default () => (
   <nav role="navigation"  class="flex content-start justify-between flex-wrap">
     <div class="flex-initial w-1/3 px-2">
       <Link to="/">
-        <img class="w-56"  src={'./citylights-logo.png'} alt="City Lights Logo" />
+        <img class="w-56"  src={'../citylights-logo.png'} alt="City Lights Logo" />
       </Link>
     </div>
     <div class="flex-initial w-2/3 text-right lg:hidden">

@@ -61,7 +61,7 @@ class RootIndex extends React.Component {
               <h3 class="section-headline">Who We Be</h3>
               <div>
                 <div class="float-left inline-block mr-8 mb-8">
-                  <img src="./citylights-image.jpg" alt="City Lights Caption" />
+                  <img src="../citylights-image.jpg" alt="City Lights Caption" />
                 </div>
                 <p class="text-xl">
                   God loved the world – including the hip-hop community – so much that he sent his Son, Jesus, not to
@@ -82,7 +82,7 @@ class RootIndex extends React.Component {
                   truth of Christ, and let God lead – all while being ourselves.
                 </p>
                 <div class="mt-8 mb-24">
-                  <img src="./sonz-graffiti.png" alt="Sonz Graffiti"/>
+                  <img src="../sonz-graffiti.png" alt="Sonz Graffiti"/>
                 </div>
               </div>
             </div>

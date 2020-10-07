@@ -5,23 +5,21 @@ import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import Hero from '../components/hero'
-import ContactForm from '../components/contactform'
 
 class RootIndex extends React.Component {
 
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const [pageHeader] = get(this, 'props.data.allContentfulPageHeader.edges')
     
     return (
       <Layout location={this.props.location}>
-        <Helmet title={siteTitle} />
+        <Helmet title='Page Not Found' />
         <Hero data={pageHeader.node} />
         <Container>
-          <h3 class="uppercase font-bold">Want to get in touch with us?</h3>
-          <p class="italic">Send us an email using citylights@thewordbecamefresh.ca or you can use the form below which ever floats your boat :D</p>
-          <ContactForm />
-          
+          <div class="my-16">
+            <p class="pb-4">Ooops! This page you are looking for has been removed or relocated.</p>
+            <a href="/" class="bg-black text-white font-bold py-2 px-4 rounded">Go Back to Homepage</a>
+          </div> 
         </Container>
       </Layout>
     )
@@ -34,7 +32,7 @@ export const query = graphql`{
   allContentfulPageHeader(
       filter: {
         name: {
-          regex: "/Contact/"
+          regex: "/404/"
         }
       }
     ) {
