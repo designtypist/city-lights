@@ -53,7 +53,7 @@ export const query = graphql`{
           name
           heroImage: image {
             fluid(maxWidth: 1180, background: "rgb:000000") {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
         }
