@@ -53,14 +53,14 @@ export default function Contact() {
             First Name
           </label>
           <input class="appearance-none block w-full text-gray-700 border border-black py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
-            id="first-name" name="first-name" type="text" placeholder="John" onChange={handleChange} />
+            id="first-name" name="first-name" type="text" placeholder="John" onChange={handleChange} required />
         </div>
         <div class="w-full md:w-1/2 px-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="last-name" for="last-name">
             Last Name
           </label>
           <input class="appearance-none block w-full text-gray-700 border border-black py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-            id="last-name" name="last-name" type="text" placeholder="Doe" onChange={handleChange} />
+            id="last-name" name="last-name" type="text" placeholder="Doe" onChange={handleChange} required />
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
@@ -69,7 +69,7 @@ export default function Contact() {
             E-mail
           </label>
           <input class="appearance-none block w-full text-gray-700 border border-black py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-            id="email" name="email" type="email" placeholder="johndoe@thewordbecamefresh.ca" onChange={handleChange} />
+            id="email" name="email" type="email" placeholder="johndoe@thewordbecamefresh.ca" onChange={handleChange} required />
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
@@ -78,9 +78,10 @@ export default function Contact() {
             Message
           </label>
           <textarea class=" no-resize appearance-none block w-full text-gray-700 border border-black py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" 
-            id="message"  name="message" placeholder="Your message goes here" onChange={handleChange} ></textarea>
+            id="message"  name="message" placeholder="Your message goes here" onChange={handleChange} required></textarea>
         </div>
       </div>
+      <div data-netlify-recaptcha="true"></div>
       <div class="md:flex md:items-center">
         <div class="md:w-1/3">
           <button type="submit" class="shadow bg-black focus:shadow-outline focus:outline-none text-white font-bold py-2 px-8">
