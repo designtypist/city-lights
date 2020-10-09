@@ -83,7 +83,7 @@
             }
 }
 
-/* Extra Large (xl) or Tablet */
+/* Medium (md) or Tablet */
 @media (min-width: 768px) { 
     .articleSection {
         height: 450px;

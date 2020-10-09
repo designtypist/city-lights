@@ -11,36 +11,51 @@ class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const citylightsActivities = get(this, 'props.data.allContentfulActivity.edges')
+    const slides = get(this, 'props.data.allContentfulSlide.edges')
 
     return (
       <Layout location={this.props.location}>
         <Helmet title={siteTitle} />
         <main>
-          <div class="splash">
-            <h1 class="uppercase text-right text-white">The Hip-Hop Community &amp; God</h1>
-            <div class="carousel">
+          <div class="splash xl:h-screen flex xl:flex-row sm:flex-col">
+            <div class="xl:text-left sm:text-center flex-initial w-full">
+              <div class="bg-black">
+                <h1 class="uppercase text-white xl:w-1/2 xl:mx-8 sm:py-8">The Hip-Hop Community and God</h1>
+              </div>
+              <h2 class="text-black xl:w-1/2 xl:mx-8 xl:my-8 sm:my-8">Hip-Hop Culture × Love × Jesus</h2>
+            </div>
+            <div class="carousel flex-initial w-full">
               <div class="carousel-inner">
                 <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="true" checked="checked" />
                 <div class="carousel-item">
-                  <img src="http://fakeimg.pl/600x400/0079D8/fff/?text=Without" alt="" />
-                  <img src="http://fakeimg.pl/600x400/DA5930/fff/?text=JavaScript" alt="" />
+                  <div class="slide-images">
+                    <div class="slide-image">
+                      <h3>{slides[0].node.title}</h3>
+                      <img src={slides[0].node.image.fluid.src} alt="" />
+                    </div>
+                    <div class="slide-image">
+                      <h3>{slides[1].node.title}</h3>
+                      <img src={slides[1].node.image.fluid.src} alt="" />
+                    </div>
+                  </div>
                 </div>
                 <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="true" />
                 <div class="carousel-item">
-                  <img src="http://fakeimg.pl/600x400/0079D8/fff/?text=Without" alt="" />
-                  <img src="http://fakeimg.pl/600x400/F90/fff/?text=Carousel" alt="" />
+                <div class="slide-images">
+                    <div class="slide-image">
+                      <h3>{slides[2].node.title}</h3>
+                      <img src={slides[2].node.image.fluid.src} alt="" />
+                    </div>
+                    <div class="slide-image">
+                      <h3>{slides[3].node.title}</h3>
+                      <img src={slides[3].node.image.fluid.src} alt="" />
+                    </div>
+                  </div>
                 </div>
-                <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="true" />
-                <div class="carousel-item">
-                  <img src="http://fakeimg.pl/600x400/F90/fff/?text=Carousel" alt="" />
-                  <img src="http://fakeimg.pl/600x400/DA5930/fff/?text=JavaScript" alt="" />
-                </div>
-                <label htmlFor="carousel-3" for="carousel-3" class="carousel-control prev control-1">‹</label>
                 <label htmlFor="carousel-2" for="carousel-2" class="carousel-control next control-1">›</label>
                 <label htmlFor="carousel-1" for="carousel-1" class="carousel-control prev control-2">‹</label>
-                <label htmlFor="carousel-3" for="carousel-3" class="carousel-control next control-2">›</label>
-                <label htmlFor="carousel-2" for="carousel-2" class="carousel-control prev control-3">‹</label>
-                <label htmlFor="carousel-1" for="carousel-1" class="carousel-control next control-3">›</label>
+                <label htmlFor="carousel-2" for="carousel-2" class="carousel-control prev control-1">‹</label>
+                <label htmlFor="carousel-1" for="carousel-1" class="carousel-control next control-2">›</label>
                 <ol class="carousel-indicators hidden">
                   <li>
                       <label htmlFor="carousel-1" for="carousel-1" class="carousel-bullet">•</label>
@@ -48,13 +63,9 @@ class RootIndex extends React.Component {
                   <li>
                       <label htmlFor="carousel-2" for="carousel-2" class="carousel-bullet">•</label>
                   </li>
-                  <li>
-                      <label htmlFor="carousel-3" for="carousel-3" class="carousel-bullet">•</label>
-                  </li>
                 </ol>
               </div>
             </div>
-            <h3 class="text-center text-white">Hip-Hop Culture × Love × Jesus</h3>
           </div>
           <Container>
             <div class="story pt-6">
@@ -126,6 +137,18 @@ export const query = graphql`{
         image {
           file {
             url
+          }
+        }
+      }
+    }
+  }
+  allContentfulSlide {
+    edges {
+      node {
+        title
+        image {
+          fluid(maxWidth: 600, maxHeight: 400, resizingBehavior: SCALE) {
+            ...GatsbyContentfulFluid
           }
         }
       }
