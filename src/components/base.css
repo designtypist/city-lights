@@ -38,10 +38,10 @@ a {
 }
 
 /**
- * navigation menu
+ * mobile navigation menu
  */
 /*Show menu when invisible checkbox is checked*/
-input[type=checkbox]:checked ~ div.menu{
+input[type=checkbox]:checked ~ div.mobile-nav{
   display: block;
 }
 
