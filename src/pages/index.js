@@ -17,54 +17,56 @@ class RootIndex extends React.Component {
       <Layout location={this.props.location}>
         <Helmet title={siteTitle} />
         <main>
-          <div class="splash xl:h-screen flex xl:flex-row sm:flex-col">
-            <div class="xl:text-left sm:text-center flex-initial w-full">
-              <div class="bg-black">
-                <h1 class="uppercase text-white xl:w-1/2 xl:mx-8 sm:py-8">The Hip-Hop Community and God</h1>
+          <div class="splash">
+            <div class="flex flex-wrap bg-black sm:pb-8">
+              <div class="flex-initial xl:w-1/2 sm:w-full items-start">
+                <h1 class="uppercase text-white xl:text-left sm:text-center p-8">The Hip-Hop Community and God</h1>
               </div>
-              <h2 class="text-black xl:w-1/2 xl:mx-8 xl:my-8 sm:my-8">Hip-Hop Culture × Love × Jesus</h2>
-            </div>
-            <div class="carousel flex-initial w-full">
-              <div class="carousel-inner">
-                <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="true" checked="checked" />
-                <div class="carousel-item">
+              <div class="flex-initial carousel items-center sm:my-0 mx-auto xl:w-1/3 sm:w-3/5">
+                <div class="carousel-inner">
+                  <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="true" checked="checked" />
+                  <div class="carousel-item">
+                    <div class="slide-images">
+                      <div class="slide-image">
+                        <h3>{slides[0].node.title}</h3>
+                        <img src={slides[0].node.image.fluid.src} alt="" />
+                      </div>
+                      <div class="slide-image">
+                        <h3>{slides[1].node.title}</h3>
+                        <img src={slides[1].node.image.fluid.src} alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="true" />
+                  <div class="carousel-item">
                   <div class="slide-images">
-                    <div class="slide-image">
-                      <h3>{slides[0].node.title}</h3>
-                      <img src={slides[0].node.image.fluid.src} alt="" />
-                    </div>
-                    <div class="slide-image">
-                      <h3>{slides[1].node.title}</h3>
-                      <img src={slides[1].node.image.fluid.src} alt="" />
-                    </div>
-                  </div>
-                </div>
-                <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="true" />
-                <div class="carousel-item">
-                <div class="slide-images">
-                    <div class="slide-image">
-                      <h3>{slides[2].node.title}</h3>
-                      <img src={slides[2].node.image.fluid.src} alt="" />
-                    </div>
-                    <div class="slide-image">
-                      <h3>{slides[3].node.title}</h3>
-                      <img src={slides[3].node.image.fluid.src} alt="" />
+                      <div class="slide-image">
+                        <h3>{slides[2].node.title}</h3>
+                        <img src={slides[2].node.image.fluid.src} alt="" />
+                      </div>
+                      <div class="slide-image">
+                        <h3>{slides[3].node.title}</h3>
+                        <img src={slides[3].node.image.fluid.src} alt="" />
+                      </div>
                     </div>
                   </div>
+                  <label htmlFor="carousel-2" for="carousel-2" class="carousel-control next control-1">›</label>
+                  <label htmlFor="carousel-1" for="carousel-1" class="carousel-control prev control-2">‹</label>
+                  <label htmlFor="carousel-2" for="carousel-2" class="carousel-control prev control-1">‹</label>
+                  <label htmlFor="carousel-1" for="carousel-1" class="carousel-control next control-2">›</label>
+                  <ol class="carousel-indicators hidden">
+                    <li>
+                        <label htmlFor="carousel-1" for="carousel-1" class="carousel-bullet">•</label>
+                    </li>
+                    <li>
+                        <label htmlFor="carousel-2" for="carousel-2" class="carousel-bullet">•</label>
+                    </li>
+                  </ol>
                 </div>
-                <label htmlFor="carousel-2" for="carousel-2" class="carousel-control next control-1">›</label>
-                <label htmlFor="carousel-1" for="carousel-1" class="carousel-control prev control-2">‹</label>
-                <label htmlFor="carousel-2" for="carousel-2" class="carousel-control prev control-1">‹</label>
-                <label htmlFor="carousel-1" for="carousel-1" class="carousel-control next control-2">›</label>
-                <ol class="carousel-indicators hidden">
-                  <li>
-                      <label htmlFor="carousel-1" for="carousel-1" class="carousel-bullet">•</label>
-                  </li>
-                  <li>
-                      <label htmlFor="carousel-2" for="carousel-2" class="carousel-bullet">•</label>
-                  </li>
-                </ol>
               </div>
+            </div>
+            <div class="flex-initial xl:w-1/2 sm:w-full">
+              <h2 class="text-black xl:text-left sm:text-center p-8">Hip-Hop Culture × Love × Jesus</h2>
             </div>
           </div>
           <Container>

@@ -38,6 +38,14 @@ a {
 }
 
 /**
+ * navigation menu
+ */
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ div.menu{
+  display: block;
+}
+
+/**
  * article grid
  */
 .article-list {
@@ -82,40 +90,31 @@ a {
     .splash h1 {
       font-size: 80px;
     }
-    .splash h2 {
+    .splash h2 {  
       font-size: 36px;
     }
-
+  
   /**
     * carousel
   */
   .carousel {
     position: relative;
-    margin: -25px auto 0 auto;
   }
-    /* Medium (sm) or Mobile */
-    @media (min-width: 360px) {
-      .carousel {
-        position: relative;
-        padding: 2em;
-      }
-    }
-    /* Medium (md) or Tablet */
     @media (min-width: 1280px) {
+      .splash {
+        margin-bottom: 10%;
+      }
       .carousel {
-        position: absolute;
-        top: 0;
-        right: 10%;
-        width: 500px;
-        padding: 0em;
+        margin-top: -2.5em;
+        margin-bottom: -15%;
       }
     }
 
-  .carousel-inner {
+    .carousel-inner {
       position: relative;
-      width: 100%;
-  }
-
+      margin: 0 auto;
+    }
+  
   .carousel-open:checked + .carousel-item {
       position: static;
       opacity: 100;
