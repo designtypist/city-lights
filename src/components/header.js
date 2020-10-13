@@ -63,17 +63,17 @@ export default () => (
     <div class="flex-initial md:w-1/3 md:text-right md:inline-block hidden uppercase">
       <ul class="p-4">
         <li class="inline-block">
-          <Link class="text-2xl px-2" to="#">
+          <Link class="text-3xl px-2" to="#">
             <FontAwesomeIcon icon={['fab', 'youtube']} />
           </Link>
         </li>
         <li class="inline-block">
-          <Link class="text-2xl px-2" to="#">
+          <Link class="text-3xl px-2" to="#">
             <FontAwesomeIcon icon={['fab', 'instagram']} />
           </Link>
         </li>
         <li class="inline-block">
-          <Link class="text-2xl px-2" to="#">
+          <Link class="text-3xl px-2" to="#">
             <FontAwesomeIcon icon={['fab', 'facebook']} />
           </Link>
         </li>

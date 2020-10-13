@@ -73,10 +73,10 @@ class RootIndex extends React.Component {
             <div class="story pt-6">
               <h3 class="section-headline">Who We Be</h3>
               <div>
-                <div class="float-left inline-block mr-8 mb-8">
+                <div class="float-left inline-block mr-6 mb-6">
                   <img src="../citylights-image.jpg" alt="City Lights Caption" />
                 </div>
-                <p class="text-xl">
+                <p class="lg:text-xl text-base">
                   God loved the world – including the hip-hop community – so much that he sent his Son, Jesus, not to
                   condemn us, but to save us. Jesus showed us the love &amp; truth of God, died for our sins &amp; resurrected,
                   and Jesus left us with a mission: Going and making disciples (“apprentices”), baptising them and

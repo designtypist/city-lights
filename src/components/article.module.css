@@ -21,6 +21,10 @@
         text-align: right;
     }
         .articleHeroTitle {
+            text-transform: uppercase;
+            font-size: 1.5em;
+            font-style: italic;
+            font-weight: bold;
             position: absolute;
             background-color: rgba(0,0,0,0.3);
             width: 100%;
@@ -47,6 +51,7 @@
         left: 40px;
     }
         .articleDescText {
+            font-weight: 200;
             background-color: #e4e4e4;
             height: 400px;
             width: 100%;
