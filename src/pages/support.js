@@ -6,6 +6,7 @@ import Container from '../components/container'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 import Article from '../components/article'
+import Quote from '../components/quote'
 
 class RootIndex extends React.Component {
   render() {
@@ -13,6 +14,8 @@ class RootIndex extends React.Component {
     const [pageHeader] = get(this, 'props.data.allContentfulPageHeader.edges')
     const partners = get(this, 'props.data.allContentfulPartner.edges')
     const citylightsOpportunities = get(this, 'props.data.allContentfulOpportunity.edges')
+    const quote = { text: 'Those who serve us are committed to the essential truths of Biblical Christianity.', 
+                    button: 'Contact', link: '/#' }
 
     return (
       <Layout location={this.props.location}>
@@ -23,9 +26,7 @@ class RootIndex extends React.Component {
             <main>
               <div class="mission">
                 <h2 class="section-headline">Mission: Statement of Faith</h2>
-                <div class="bg-auto bg-gray-300 text-center p-12 my-24">
-                  <h3 class="italic mb-6">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu felis nunc. Nulla diam risus, rhoncus.”</h3>
-                </div>
+                <Quote quote={quote} />
               </div>
               <div class="partners mb-12">
                 <h2>Partners</h2>

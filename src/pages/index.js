@@ -1,17 +1,19 @@
 import React from 'react'
 import get from 'lodash/get'
 import { graphql } from 'gatsby'
-import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Container from '../components/container'
 import Layout from '../components/layout'
 import Article from '../components/article'
+import Quote from '../components/quote'
 
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const citylightsActivities = get(this, 'props.data.allContentfulActivity.edges')
     const slides = get(this, 'props.data.allContentfulSlide.edges')
+    const quote = { text:'Hit us up for more information ony any of these. Looking forward to connecting with you.',
+                    link:'/connect/', button:'Connect' }
 
     return (
       <Layout location={this.props.location}>
@@ -115,10 +117,7 @@ class RootIndex extends React.Component {
                 })}
               </section>
             </div>
-            <div class="bg-auto bg-gray-300 text-center p-12 my-24">
-              <h3 class="italic mb-6">“Hit us up for more information ony any of these. Looking forward to connecting with you.”</h3>
-              <Link class="bg-black text-white font-bold py-2 px-4 rounded" to="/connect/">Connect</Link>
-            </div>
+            <Quote quote={quote} />
           </Container>
         </main>
       </Layout>
