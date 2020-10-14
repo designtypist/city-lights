@@ -71,7 +71,7 @@ class RootIndex extends React.Component {
           </div>
           <Container>
             <div class="story pt-6">
-              <h3 class="section-headline">Who We Be</h3>
+              <h3 id="who-we-be" class="section-headline">Who We Be</h3>
               <div>
                 <div class="float-left inline-block mr-6 mb-6">
                   <img src="../citylights-image.jpg" alt="City Lights Caption" />

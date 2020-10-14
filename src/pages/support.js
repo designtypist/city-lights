@@ -24,7 +24,7 @@ class RootIndex extends React.Component {
               <div class="mission">
                 <h2 class="section-headline">Mission: Statement of Faith</h2>
                 <div class="bg-auto bg-gray-300 text-center p-12 my-24">
-                  <h3 class="italic mb-6">““Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu felis nunc. Nulla diam risus, rhoncus. ””</h3>
+                  <h3 class="italic mb-6">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu felis nunc. Nulla diam risus, rhoncus.”</h3>
                 </div>
               </div>
               <div class="partners mb-12">
