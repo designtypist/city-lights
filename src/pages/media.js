@@ -25,9 +25,9 @@ class RootIndex extends React.Component {
             </div>
             <div class="my-12">
               <h3 class="section-headline">Videos</h3>
-              <div class="flex">
-                <iframe class="w-1/2 inline-block" width="600" height="400" title="video 1" src="https://www.youtube.com/embed/T8qWtxxF64s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe class="w-1/2 inline-block" width="600" height="400" title="video 2" src="https://www.youtube.com/embed/LJGLn-IwpN4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div class="flex flex-wrap">
+                <iframe class="lg:w-1/2 w-full inline-block p-2" width="600" height="400" title="video 1" src="https://www.youtube.com/embed/T8qWtxxF64s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="lg:w-1/2 w-full inline-block p-2" width="600" height="400" title="video 2" src="https://www.youtube.com/embed/LJGLn-IwpN4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
           </Container>
