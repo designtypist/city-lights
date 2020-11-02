@@ -14,7 +14,6 @@ img {
 
 h1, h2, h3 {
   font-size: 2em;
-  font-weight: bold;
 }
 
 a {
@@ -85,6 +84,17 @@ input[type=checkbox]:checked ~ div.mobile-nav{
       font-family: "calgary-script-ot", Arial, Helvetica, sans-serif;
       font-size: 3em;
     }
+    @media (max-width: 1280px) {
+      .splash {
+        margin-bottom: 10%;
+      }
+      .splash h1 {
+        font-size: 4em;
+      }
+      .carousel {
+        font-size: 2em;
+      }
+    }
   
   /**
     * carousel
@@ -93,15 +103,11 @@ input[type=checkbox]:checked ~ div.mobile-nav{
     position: relative;
   }
     @media (min-width: 1280px) {
-      .splash {
-        margin-bottom: 10%;
-      }
       .carousel {
         margin-top: -2.5em;
         margin-bottom: -15%;
       }
     }
-
     .carousel-inner {
       position: relative;
       margin: 0 auto;
@@ -132,7 +138,6 @@ input[type=checkbox]:checked ~ div.mobile-nav{
 
   .slide-image h3 {
     font-family: "calgary-script-ot", Arial, Helvetica, sans-serif;
-    font-size: 2.5em;
     color: white;
     position: absolute;
     padding: 0 16px 16px 0;

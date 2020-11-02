@@ -11,12 +11,12 @@ export default () => (
     </div>
 
     <div class="flex-initial w-2/3 text-right md:hidden p-4">
-      <label class="flex-initial items-center px-3 py-2 border rounded text-black border-black" htmlFor="nav-menu" for="nav-menu">
+      <label class="flex-initial items-center cursor-pointer px-3 py-2 border rounded text-black border-black" htmlFor="nav-menu" for="nav-menu">
         <FontAwesomeIcon icon={['fa', 'bars']} />
       </label>
     </div>
-    <input class="hidden" id="nav-menu" type="checkbox" />
-    <div class="mobile-nav hidden w-full text-center text-black uppercase">
+    <input class="hidden cursor-pointer" id="nav-menu" type="checkbox" />
+    <div class="mobile-nav hidden w-full text-center text-black uppercase md:mb-0 mb-6">
       <ul>
         <li class="text-3xl my-8">
           <Link to="/">Home</Link>

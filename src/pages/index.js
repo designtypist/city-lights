@@ -2,6 +2,8 @@ import React from 'react'
 import get from 'lodash/get'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import { Link } from 'gatsby'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Container from '../components/container'
 import Layout from '../components/layout'
 import Article from '../components/article'
@@ -22,19 +24,19 @@ class RootIndex extends React.Component {
           <div class="splash">
             <div class="flex flex-wrap bg-black sm:pb-8">
               <div class="flex-initial xl:w-1/2 sm:w-full items-start">
-                <h1 class="uppercase text-white xl:text-left sm:text-center p-8">The Hip-Hop Community and God</h1>
+                <h1 class="uppercase text-white xl:text-left text-center p-8">The Hip-Hop Community and God</h1>
               </div>
-              <div class="flex-initial carousel items-center sm:my-0 mx-auto xl:w-1/3 sm:w-3/5">
-                <div class="carousel-inner">
+              <div class="flex-initial carousel items-center sm:my-0 mx-auto xl:w-1/3 w-4/5">
+                <div class="carousel-inner lg:px-0 px-12">
                   <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="true" checked="checked" />
                   <div class="carousel-item">
                     <div class="slide-images">
                       <div class="slide-image">
-                        <h3>{slides[0].node.title}</h3>
+                        <h3 class="lg:text-4xl text-3xl">{slides[0].node.title}</h3>
                         <img src={slides[0].node.image.fluid.src} alt="" />
                       </div>
                       <div class="slide-image">
-                        <h3>{slides[1].node.title}</h3>
+                        <h3 class="lg:text-4xl text-3xl">{slides[1].node.title}</h3>
                         <img src={slides[1].node.image.fluid.src} alt="" />
                       </div>
                     </div>
@@ -43,11 +45,11 @@ class RootIndex extends React.Component {
                   <div class="carousel-item">
                   <div class="slide-images">
                       <div class="slide-image">
-                        <h3>{slides[2].node.title}</h3>
+                        <h3 class="lg:text-4xl text-3xl">{slides[2].node.title}</h3>
                         <img src={slides[2].node.image.fluid.src} alt="" />
                       </div>
                       <div class="slide-image">
-                        <h3>{slides[3].node.title}</h3>
+                        <h3 class="lg:text-4xl text-3xl">{slides[3].node.title}</h3>
                         <img src={slides[3].node.image.fluid.src} alt="" />
                       </div>
                     </div>
@@ -68,17 +70,17 @@ class RootIndex extends React.Component {
               </div>
             </div>
             <div class="flex-initial xl:w-1/2 sm:w-full">
-              <h2 class="text-black xl:text-left sm:text-center p-8">Hip-Hop Culture × Love × Jesus</h2>
+              <h2 class="text-black xl:text-left text-center p-8">Hip-Hop Culture × Love × Jesus</h2>
             </div>
           </div>
           <Container>
             <div class="story pt-6">
               <h3 id="who-we-be" class="section-headline">Who We Be</h3>
               <div>
-                <div class="float-left inline-block mr-6 mb-6">
+                <div class="md:float-left clear-both md:inline-block block mr-6 mb-6">
                   <img src="../citylights-image.jpg" alt="City Lights Caption" />
                 </div>
-                <p class="lg:text-xl text-base">
+                <p class="md:text-xl text-base">
                   God loved the world – including the hip-hop community – so much that he sent his Son, Jesus, not to
                   condemn us, but to save us. Jesus showed us the love &amp; truth of God, died for our sins &amp; resurrected,
                   and Jesus left us with a mission: Going and making disciples (“apprentices”), baptising them and
@@ -98,6 +100,22 @@ class RootIndex extends React.Component {
                 </p>
                 <div class="mt-8 mb-24">
                   <img src="../sonz-graffiti.png" alt="Sonz Graffiti"/>
+                  <div class="text-right">
+                    <h3 class="uppercase md:text-4xl text-2xl">Work by <span class="font-bold">Sonz</span></h3>
+                    <h4 class="md:text-xl text-md text-gray-400">Check him out!</h4>
+                    <ul class="text-black md:text-4xl text-3xl">
+                      <li class="inline-block">
+                        <Link class="px-2" to="#">
+                          <FontAwesomeIcon icon={['fab', 'facebook']} />
+                        </Link>
+                      </li>
+                      <li class="inline-block">
+                        <Link class="px-2" to="#">
+                          <FontAwesomeIcon icon={['fab', 'instagram']} />
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>

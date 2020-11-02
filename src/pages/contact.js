@@ -7,19 +7,28 @@ import Container from '../components/container'
 import Hero from '../components/hero'
 import ContactForm from '../components/contactform'
 
-class RootIndex extends React.Component {
 
+class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const [pageHeader] = get(this, 'props.data.allContentfulPageHeader.edges')
-    
+    const Mailto = ({ email, subject, body, children }) => {
+      return (
+        <a class="text-gray-600" href={`mailto:${email}?subject=${encodeURIComponent(subject) || ''}&body=${encodeURIComponent(body) || ''}`}>{children}</a>
+      );
+    };
+
     return (
       <Layout location={this.props.location}>
         <Helmet title={siteTitle} />
         <Hero data={pageHeader.node} />
         <Container>
-          <h3 class="uppercase font-bold">Want to get in touch with us?</h3>
-          <p class="italic">Send us an email using citylights@thewordbecamefresh.ca or you can use the form below which ever floats your boat :D</p>
+          <h3 class="uppercase md:text-left text-center font-bold">Want to get in touch with us?</h3>
+          <p class="italic md:text-left text-center">
+            Feel free to send us an
+            <Mailto email="citylights@webecamefresh.ca" subject="Hi" body="Hello world!"> email </Mailto>
+            or use the form below.
+          </p>
           <ContactForm />
           
         </Container>

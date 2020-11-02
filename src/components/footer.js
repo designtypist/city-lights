@@ -29,23 +29,23 @@ export default () => (
         </div>
     </div>
       <div class="flex flex-wrap bg-black text-white">
-        <div class="flex lg:w-2/3 w-full items-center lg:justify-start justify-center lg:pl-24 p-4">
+        <div class="flex flex-wrap lg:w-2/3 w-full m-auto items-center lg:justify-start justify-center lg:pl-24 p-4">
             <Link to="/">
-                <img class="w-40 mr-6" src={'../citylights-logo-invert.png'} alt="City Lights Logo" />
+                <img class="w-40 m-auto" src={'../citylights-logo-invert.png'} alt="City Lights Logo" />
             </Link>
-            <div class="px-2">
+            <div class="lg:text-left text-center p-6">
                 <p>© 2013-2020 CityLights. All right reserved </p>
                 <p>Designed and Developed by James C</p>
             </div>
         </div>
-        <div class="flex-initial lg:w-1/3 w-full self-center lg:text-right text-center md:pr-24 p-4 ">
-            <Link class="text-2xl px-2" to="#">
+        <div class="flex-initial lg:w-1/3 w-full self-center lg:text-right text-center md:pr-24 p-4">
+            <Link class="text-3xl px-2 text-white" to="#">
                 <FontAwesomeIcon icon={['fab', 'facebook']} />
             </Link>
-            <Link class="text-2xl px-2" to="#">
+            <Link class="text-3xl px-2 text-white" to="#">
                 <FontAwesomeIcon icon={['fab', 'instagram']} />
             </Link>
-            <Link class="text-2xl px-2" to="#">
+            <Link class="text-3xl px-2 text-white" to="#">
                 <FontAwesomeIcon icon={['fab', 'youtube']} />
             </Link>
         </div>

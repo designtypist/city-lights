@@ -70,23 +70,23 @@
         height: 700px;
     }
         .articleHeroSection {
-            max-width: 75%;
+            max-width: 85%;
         }
             .articleHeroImage {
-                height: 350px;
+                height: 360px;
             }
         .articleDescSection {
-            max-width: 75%;
-            top: 300px;
+            max-width: 85%;
+            top: 360px;
         }
             .articleDescText {
-                height: 350px;
-                padding-top: 120px;
+                height: 360px;
+                padding-top: 60px;
             }
 }
 
 /* Medium (md) or Tablet */
-@media (min-width: 768px) { 
+@media (min-width: 850px) { 
     .articleSection {
         height: 450px;
     }
