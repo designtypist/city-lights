@@ -1,10 +1,12 @@
 import React from 'react'
 import get from 'lodash/get'
+import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Container from '../components/container'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 import Article from '../components/article'
+import Quote from '../components/quote'
 
 class RootIndex extends React.Component {
   render() {
@@ -12,6 +14,8 @@ class RootIndex extends React.Component {
     const [pageHeader] = get(this, 'props.data.allContentfulPageHeader.edges')
     const partners = get(this, 'props.data.allContentfulPartner.edges')
     const citylightsOpportunities = get(this, 'props.data.allContentfulOpportunity.edges')
+    const quote = { text: 'Those who serve us are committed to the essential truths of Biblical Christianity.', 
+                    button: 'Contact', link: '/#' }
 
     return (
       <Layout location={this.props.location}>
@@ -22,9 +26,7 @@ class RootIndex extends React.Component {
             <main>
               <div class="mission">
                 <h2 class="section-headline">Mission: Statement of Faith</h2>
-                <div class="bg-auto bg-gray-300 text-center p-12 my-24">
-                  <h3 class="italic mb-6">““Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu felis nunc. Nulla diam risus, rhoncus. ””</h3>
-                </div>
+                <Quote quote={quote} />
               </div>
               <div class="partners mb-12">
                 <h2>Partners</h2>
@@ -42,15 +44,21 @@ class RootIndex extends React.Component {
                 </ul>
                 <hr />
               </div>
-              <div class="support-us my-12">
-                <h2 class="section-headline text-right">Want to Support Us?</h2>
-                {citylightsOpportunities.map(({ node }) => {
-                  return (
-                    <section key={node.id}>
-                      <Article data={node} />
-                    </section>
-                  )
-                })}
+              <div class="my-12">
+                <h2 class="section-headline lg:text-right sm:text-center">Want to Support Us?</h2>
+                <section>
+                  {citylightsOpportunities.map(({ node }, index) => {
+                    return (
+                      <article key={node.id}>
+                        {index % 2 === 0 ? 
+                          <Article data={node} position='left' />
+                          :
+                          <Article data={node} position='right' />
+                        }
+                      </article>
+                    )
+                  })}
+                </section>
               </div>
             </main>
           </Container>
@@ -70,7 +78,7 @@ export const query = graphql`
         name
         heroImage: image {
           fluid(maxWidth: 1180, background: "rgb:000000") {
-            ...GatsbyContentfulFluid_tracedSVG
+            ...GatsbyContentfulFluid
           }
         }
       }

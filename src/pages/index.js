@@ -1,95 +1,141 @@
 import React from 'react'
 import get from 'lodash/get'
 import { graphql } from 'gatsby'
-import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import { Link } from 'gatsby'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Container from '../components/container'
 import Layout from '../components/layout'
 import Article from '../components/article'
+import Quote from '../components/quote'
 
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const citylightsActivities = get(this, 'props.data.allContentfulActivity.edges')
+    const slides = get(this, 'props.data.allContentfulSlide.edges')
+    const quote = { text:'Hit us up for more information ony any of these. Looking forward to connecting with you.',
+                    link:'/connect/', button:'Connect' }
 
     return (
       <Layout location={this.props.location}>
         <Helmet title={siteTitle} />
         <main>
           <div class="splash">
-            <h1 class="uppercase text-right text-white">Hip-Hop Community Matters to God</h1>
-            <div class="carousel">
-              <div class="carousel-inner">
-                <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="true" checked="checked" />
-                <div class="carousel-item">
-                  <img src="http://fakeimg.pl/600x400/0079D8/fff/?text=Without" alt="" />
-                  <img src="http://fakeimg.pl/600x400/DA5930/fff/?text=JavaScript" alt="" />
+            <div class="flex flex-wrap bg-black sm:pb-8">
+              <div class="flex-initial xl:w-1/2 sm:w-full items-start">
+                <h1 class="uppercase text-white xl:text-left text-center p-8">The Hip-Hop Community and God</h1>
+              </div>
+              <div class="flex-initial carousel items-center sm:my-0 mx-auto xl:w-1/3 w-4/5">
+                <div class="carousel-inner lg:px-0 px-12">
+                  <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="true" checked="checked" />
+                  <div class="carousel-item">
+                    <div class="slide-images">
+                      <div class="slide-image">
+                        <h3 class="lg:text-4xl text-3xl">{slides[0].node.title}</h3>
+                        <img src={slides[0].node.image.fluid.src} alt="" />
+                      </div>
+                      <div class="slide-image">
+                        <h3 class="lg:text-4xl text-3xl">{slides[1].node.title}</h3>
+                        <img src={slides[1].node.image.fluid.src} alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="true" />
+                  <div class="carousel-item">
+                  <div class="slide-images">
+                      <div class="slide-image">
+                        <h3 class="lg:text-4xl text-3xl">{slides[2].node.title}</h3>
+                        <img src={slides[2].node.image.fluid.src} alt="" />
+                      </div>
+                      <div class="slide-image">
+                        <h3 class="lg:text-4xl text-3xl">{slides[3].node.title}</h3>
+                        <img src={slides[3].node.image.fluid.src} alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <label htmlFor="carousel-2" for="carousel-2" class="carousel-control next control-1">›</label>
+                  <label htmlFor="carousel-1" for="carousel-1" class="carousel-control prev control-2">‹</label>
+                  <label htmlFor="carousel-2" for="carousel-2" class="carousel-control prev control-1">‹</label>
+                  <label htmlFor="carousel-1" for="carousel-1" class="carousel-control next control-2">›</label>
+                  <ol class="carousel-indicators hidden">
+                    <li>
+                        <label htmlFor="carousel-1" for="carousel-1" class="carousel-bullet">•</label>
+                    </li>
+                    <li>
+                        <label htmlFor="carousel-2" for="carousel-2" class="carousel-bullet">•</label>
+                    </li>
+                  </ol>
                 </div>
-                <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="true" />
-                <div class="carousel-item">
-                  <img src="http://fakeimg.pl/600x400/0079D8/fff/?text=Without" alt="" />
-                  <img src="http://fakeimg.pl/600x400/F90/fff/?text=Carousel" alt="" />
-                </div>
-                <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="true" />
-                <div class="carousel-item">
-                  <img src="http://fakeimg.pl/600x400/F90/fff/?text=Carousel" alt="" />
-                  <img src="http://fakeimg.pl/600x400/DA5930/fff/?text=JavaScript" alt="" />
-                </div>
-                <label htmlFor="carousel-3" for="carousel-3" class="carousel-control prev control-1">‹</label>
-                <label htmlFor="carousel-2" for="carousel-2" class="carousel-control next control-1">›</label>
-                <label htmlFor="carousel-1" for="carousel-1" class="carousel-control prev control-2">‹</label>
-                <label htmlFor="carousel-3" for="carousel-3" class="carousel-control next control-2">›</label>
-                <label htmlFor="carousel-2" for="carousel-2" class="carousel-control prev control-3">‹</label>
-                <label htmlFor="carousel-1" for="carousel-1" class="carousel-control next control-3">›</label>
-                <ol class="carousel-indicators hidden">
-                  <li>
-                      <label htmlFor="carousel-1" for="carousel-1" class="carousel-bullet">•</label>
-                  </li>
-                  <li>
-                      <label htmlFor="carousel-2" for="carousel-2" class="carousel-bullet">•</label>
-                  </li>
-                  <li>
-                      <label htmlFor="carousel-3" for="carousel-3" class="carousel-bullet">•</label>
-                  </li>
-                </ol>
               </div>
             </div>
-            <h3 class="text-center text-white">That's why he sent Jesus Christ and that's why he sends us</h3>
+            <div class="flex-initial xl:w-1/2 sm:w-full">
+              <h2 class="text-black xl:text-left text-center p-8">Hip-Hop Culture × Love × Jesus</h2>
+            </div>
           </div>
           <Container>
             <div class="story pt-6">
-              <h3 class="section-headline">Our Story</h3>
+              <h3 id="who-we-be" class="section-headline">Who We Be</h3>
               <div>
-                <div class="float-left inline-block mr-8 mb-8">
-                  <img src="./citylights-image.jpg" alt="City Lights Caption" />
+                <div class="md:float-left clear-both md:inline-block block mr-6 mb-6">
+                  <img src="../citylights-image.jpg" alt="City Lights Caption" />
                 </div>
-                <p class="text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis et lorem sit amet vehicula. Etiam vel nibh nec 
-                  nisi euismod mollis ultrices condimentum velit. Proin velit libero, interdum ac rhoncus sit amet, pellentesque ac turpis. 
-                  Quisque ac luctus turpis, vel efficitur ante. Cras convallis risus vel vehicula dapibus. Donec eget neque fringilla, faucibus 
-                  mi quis, porttitor magna. Cras pellentesque leo est, et luctus neque rutrum eu. Aliquam consequat velit sed sem posuere, 
-                  vitae sollicitudin mi consequat. Mauris eget ipsum sed dui rutrum fringilla. Donec varius vehicula magna sit amet auctor. 
-                  Ut congue vehicula lectus in blandit. Vivamus suscipit eleifend turpis, nec sodales sem vulputate a. Curabitur pulvinar 
-                  libero viverra, efficitur odio eu, finibus justo. Etiam eu vehicula felis.
+                <p class="md:text-xl text-base">
+                  God loved the world – including the hip-hop community – so much that he sent his Son, Jesus, not to
+                  condemn us, but to save us. Jesus showed us the love &amp; truth of God, died for our sins &amp; resurrected,
+                  and Jesus left us with a mission: Going and making disciples (“apprentices”), baptising them and
+                  teaching them to follow all that he taught. 
+                  One people group that is often left out is the hip-hop community: emcees, deejays, breakers, graffiti
+                  writers, those involved with knowledge, fans, etc. God has called us to reach them, in their
+                  world/culture, and to make disciples that make more disciples.
+                  The vision is to see Canada’s hip-hop community following Jesus Christ. We will do this by providing
+                  events to better their skills, events to serve others, building genuine loving relationships, and discipling
+                  them in a way that is natural to the hip-hop culture.
+                  Can you imagine how dope it will be if, because they follow Jesus so well, that instead of having a
+                  reputation for misogyny, drugs, and violence, they became known for their grace, generosity, kindness,
+                  peace, joy, and helping others have a relationship with God?
+                  There is no blueprint for this pioneering mission (in Canada), we will be faithful to the work as God
+                  makes the work fruitful. We will love the people, encourage the hip-hop elements, bring &amp; show the
+                  truth of Christ, and let God lead – all while being ourselves.
                 </p>
                 <div class="mt-8 mb-24">
-                  <img src="./sonz-graffiti.png" alt="Sonz Graffiti"/>
+                  <img src="../sonz-graffiti.png" alt="Sonz Graffiti"/>
+                  <div class="text-right">
+                    <h3 class="uppercase md:text-4xl text-2xl">Work by <span class="font-bold">Sonz</span></h3>
+                    <h4 class="md:text-xl text-md text-gray-400">Check him out!</h4>
+                    <ul class="text-black md:text-4xl text-3xl">
+                      <li class="inline-block">
+                        <Link class="px-2" to="#">
+                          <FontAwesomeIcon icon={['fab', 'facebook']} />
+                        </Link>
+                      </li>
+                      <li class="inline-block">
+                        <Link class="px-2" to="#">
+                          <FontAwesomeIcon icon={['fab', 'instagram']} />
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="activities my-12">
               <h2 class="section-headline">City Lights Activities</h2>
-              {citylightsActivities.map(({ node }) => {
-                return (
-                  <section key={node.id}>
-                    <Article data={node} />
-                  </section>
-                )
-              })}
+              <section>
+                {citylightsActivities.map(({ node }, index) => {
+                  return (
+                    <article key={node.id}>
+                      {index % 2 === 0 ? 
+                        <Article data={node} position='left' />
+                        :
+                        <Article data={node} position='right' />
+                      }
+                    </article>
+                  )
+                })}
+              </section>
             </div>
-            <div class="bg-auto bg-gray-300 text-center p-12 my-24">
-              <h3 class="italic mb-6">“Hit us up for more information ony any of these. Looking forward to connecting with you.”</h3>
-              <Link class="bg-black text-white font-bold py-2 px-4 rounded" to="/connect/">Connect</Link>
-            </div>
+            <Quote quote={quote} />
           </Container>
         </main>
       </Layout>
@@ -110,6 +156,18 @@ export const query = graphql`{
         image {
           file {
             url
+          }
+        }
+      }
+    }
+  }
+  allContentfulSlide {
+    edges {
+      node {
+        title
+        image {
+          fluid(maxWidth: 600, maxHeight: 400, resizingBehavior: SCALE) {
+            ...GatsbyContentfulFluid
           }
         }
       }

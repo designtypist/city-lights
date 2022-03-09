@@ -1,1 +1,2 @@
-import "./src/css/index.css"
+import "./src/css/tailwindcss.css"
+import "./src/css/typography.css"

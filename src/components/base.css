@@ -1,16 +1,8 @@
-@font-face {
-  font-family: "Avenir";
-  font-weight: 400;
-  font-style: normal;
-  src: url("/avenir-400.woff2") format("woff2");
-  font-display: swap;
-}
-
 body {
-  font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
+  font-family: "roboto", Tahoma, Arial, Helvetica, sans-serif;
   font-size: 1em;
   line-height: 1.65;
-  color: #373F49;
+  color: #000;
   background: #fff;
   margin: 0;
 }
@@ -20,21 +12,26 @@ img {
   width: 100%;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-size: 2em;
-  font-weight: normal;
 }
 
 a {
-  color: currentColor;
+  color: #000;
 }
 
 .wrapper {
   width: calc(100% - 10vmin);
   margin: 0 auto;
   padding: 5vmin 0;
+}
+
+/**
+ * mobile navigation menu
+ */
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ div.mobile-nav{
+  display: block;
 }
 
 /**
@@ -77,44 +74,45 @@ a {
   * splash
   */
   .splash {
-    background-color: black;
+    position: relative;
   }
-
-  .splash h1 {
-    padding-top: 60px;
-    padding-right: 40px;
-    font-size: 80px;
-  }
-
-  .splash h3 {
-    padding: 30px 0;
-  }
+    .splash h1 {
+      font-family: "calgary-script-ot", Arial, Helvetica, sans-serif;
+      font-size: 6em;
+    }
+    .splash h2 {
+      font-family: "calgary-script-ot", Arial, Helvetica, sans-serif;
+      font-size: 3em;
+    }
+    @media (max-width: 1280px) {
+      .splash {
+        margin-bottom: 10%;
+      }
+      .splash h1 {
+        font-size: 4em;
+      }
+      .carousel {
+        font-size: 2em;
+      }
+    }
   
-  /**
-  * blob svg
-  */
-  .blob {
-    background: url(../../static/blob.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
   /**
     * carousel
   */
   .carousel {
-      position: relative;
-      margin-top: 26px;
-      margin-left: 50px;
-      margin-right: 50px;
+    position: relative;
   }
-
-  .carousel-inner {
+    @media (min-width: 1280px) {
+      .carousel {
+        margin-top: -2.5em;
+        margin-bottom: -15%;
+      }
+    }
+    .carousel-inner {
       position: relative;
-      overflow: hidden;
-      width: 100%;
-  }
-
+      margin: 0 auto;
+    }
+  
   .carousel-open:checked + .carousel-item {
       position: static;
       opacity: 100;
@@ -128,10 +126,23 @@ a {
   }
 
   .carousel-item img {
-      display: inline-block;
-      height: auto;
-      max-width: 50%;
-      padding: 0 50px;
+      display: block;
+      max-height: 400px;
+      max-width: 100%;
+      padding: 10px 0;
+  }
+
+  .slide-image {
+    position: relative;
+  }
+
+  .slide-image h3 {
+    font-family: "calgary-script-ot", Arial, Helvetica, sans-serif;
+    color: white;
+    position: absolute;
+    padding: 0 16px 16px 0;
+    bottom: 0;
+    right: 0;
   }
 
   .carousel-control {

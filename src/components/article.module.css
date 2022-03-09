@@ -1,31 +1,121 @@
-article {
-    margin: 2em 0;
-}
-
-.articleHero {
+/* main article section */
+.articleSection {
+    height: 500px;
     position: relative;
-    width: 50%;
-}
-
-.articleTitleBackground {
-    position: absolute;
-    background-color: rgba(0,0,0,0.3);
     width: 100%;
+    z-index: 0;
+}
+    /* image caption section */
+    .articleHeroSection {
+        position: absolute;
+        z-index: 2;
+        max-width: 50%;
+        top: 40px;
+    }
+    .leftArticleHeroSection {
+        left: 40px;
+        text-align: left;
+    }
+    .rightArticleHeroSection {
+        right: 40px;
+        text-align: right;
+    }
+        .articleHeroTitle {
+            text-transform: uppercase;
+            font-size: 1.5em;
+            font-style: italic;
+            font-weight: bold;
+            position: absolute;
+            background-color: rgba(0,0,0,0.3);
+            width: 100%;
+            opacity: 100%;
+            padding: 0.5em 1em;
+            color: white;
+        }
+        .articleHeroImage {
+            height: 400px;
+            width: 100%;
+        }
+
+    /* article description section */
+    .articleDescSection {
+        position: absolute;
+        max-width: 50%;
+        z-index: 1;
+        top: 40px;
+    }
+    .leftArticleDescSection {
+        right: 40px;
+    }
+    .rightArticleDescSection {
+        left: 40px;
+    }
+        .articleDescText {
+            font-weight: 200;
+            background-color: #e4e4e4;
+            height: 400px;
+            width: 100%;
+            color: black;
+            overflow: hidden;
+            padding: 2em;
+            text-overflow: ellipsis;
+        }
+
+/*
+    Responsive CSS
+*/
+/* Small (sm) or Mobile*/
+@media (min-width: 360px) {
+    .articleSection {
+        height: 700px;
+    }
+        .articleHeroSection {
+            max-width: 85%;
+        }
+            .articleHeroImage {
+                height: 360px;
+            }
+        .articleDescSection {
+            max-width: 85%;
+            top: 360px;
+        }
+            .articleDescText {
+                height: 360px;
+                padding-top: 60px;
+            }
 }
 
-.articleTitle {
-    opacity: 100%;
-    padding: 0.5em 1em;
-    color: white;
+/* Medium (md) or Tablet */
+@media (min-width: 850px) { 
+    .articleSection {
+        height: 450px;
+    }
+        .articleHeroSection {
+            max-width: 50%;
+        }
+        .articleDescSection {
+            max-width: 50%;
+            top: 80px;
+        }
+            .leftArticleDescText {
+                padding: 2em;
+                padding-left: 8em;
+            }
+            .rightArticleDescText {
+                padding: 2em;
+                padding-right: 8em;
+            }
 }
 
-.articleDescBackground {
-    position: relative;
-    width: 50%;
-    background-color: #C4C4C4;
-}
-
-.articleDesc {
-    color: black;
-    padding: 1em 2em;
+/* Extra Large (xl) or Desktop */
+@media (min-width: 1440px) {
+    .articleSection {
+        height: 500px;
+    }
+        .articleHeroImage {
+            height: 400px;
+        }
+        .articleDescText {
+            height: 400px;
+        }
 }
